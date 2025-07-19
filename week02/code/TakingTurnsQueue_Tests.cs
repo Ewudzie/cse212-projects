@@ -64,6 +64,7 @@ public class TakingTurnsQueueTests
             var person = players.GetNextPerson();
             Assert.AreEqual(expectedResult[i].Name, person.Name);
         }
+        
 
         players.AddPerson("George", 3);
 
