@@ -39,14 +39,14 @@ public static class SetsAndMaps
 
             if (wordSet.Contains(reversed) && !alreayUsed.Contains(reversed) && !alreayUsed.Contains(word))
             {
-                result.Add("${word} & {reversed}");
+                result.Add($"{word} & {reversed}");
                 alreayUsed.Add(word);
                 alreayUsed.Add(reversed);
             }
 
             wordSet.Add(word);
         }
-        return result;
+        return result.ToArray();
     }
 
     /// <summary>
