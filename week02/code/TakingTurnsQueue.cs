@@ -37,10 +37,11 @@ public class TakingTurnsQueue
         {
             throw new InvalidOperationException("No one in the queue.");
         }
+
         else
         {
             Person person = _people.Dequeue();
-            if (person.Turns <= 0)
+            if (person.Turns > 0)
             {
                 person.Turns -= 1;
                 _people.Enqueue(person);
