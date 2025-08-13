@@ -34,12 +34,36 @@ public class Node
     public bool Contains(int value)
     {
         // TODO Start Problem 2
+
+        // If current node matches
+        if (value == Data)
+            return true;
+
+        // Search left
+        if (value < Data && Left != null)
+            return Left.Contains(value);
+
+        // Search right
+        if (value > Data && Right != null)
+            return Right.Contains(value);
+
+
+        // Not found
         return false;
     }
 
     public int GetHeight()
     {
         // TODO Start Problem 4
-        return 0; // Replace this line with the correct return statement(s)
+        
+        // Height of empty node is 0
+        int leftHeight = Left?.GetHeight() ?? 0;
+        int rightHeight = Right?.GetHeight() ?? 0;
+
+        // Add 1 for the current node
+        return 1 + Math.Max(leftHeight, rightHeight);
+
+
+        
     }
 }
